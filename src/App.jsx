@@ -1,7 +1,13 @@
+import Header from './components/Header';
+import Hero from './components/Hero';
+
 export default function App() {
   return (
-    <h1 className="p-8 text-3xl font-bold text-accent">
-      Tailwind works!
-    </h1>
+    <>
+      <Header />
+      <main>
+        <Hero />
+      </main>
+    </>
   );
 }
