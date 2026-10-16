@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="mx-auto mb-20 mt-8 w-[90%] max-w-[1200px] overflow-hidden rounded-2xl bg-surface shadow-lift">
       <img
-        src="/images/bookhero.jpg"
+        src="public/images/bookhero.jpg"
         alt="Inside Corner Shelf Books"
         className="h-[220px] w-full object-cover sm:h-[300px] md:h-[500px]"
       />
