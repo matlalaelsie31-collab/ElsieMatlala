@@ -2,7 +2,7 @@ export default function BookCard({ collection }) {
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl bg-surface shadow-soft md:flex-row md:gap-8">
       <img
-        src="/public/Images/fiction.jpg"
+        src={collection.image}
         alt={collection.alt}
         className="h-[250px] w-full object-cover md:h-auto md:w-[350px] md:shrink-0"
       />

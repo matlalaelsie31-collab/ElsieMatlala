@@ -4,7 +4,7 @@ export const collections = [
     title: 'Fiction',
     description:
       'Dive into bestselling novels, literary favourites, fantasy adventures, mysteries, and contemporary stories.',
-    image: '/images/fiction.jpg',
+    image: '/public/Images/fiction.jpg',
     alt: 'Shelves of fiction books',
   },
   {
@@ -12,7 +12,7 @@ export const collections = [
     title: 'Nonfiction',
     description:
       'Explore history, science, business, biographies, and inspiring real-life stories.',
-    image: '/images/non-fiction.jpg',
+    image: '/public/Images/non-fiction.jpg',
     alt: 'A stack of nonfiction books',
   },
   {
@@ -20,7 +20,7 @@ export const collections = [
     title: 'Staff Picks',
     description:
       'Discover hand-picked favourites selected by our passionate booksellers and reading community.',
-    image: '/images/staff-picks.jpg',
+    image: '/public/Images/staff-picks.jpg',
     alt: 'Staff recommended books on display',
   },
 ];
@@ -32,7 +32,7 @@ export const events = [
     title: 'Author Reading Night',
     description:
       'Meet local authors, enjoy live readings, and take part in audience Q&A sessions.',
-    image: '/images/author-night.jpg',
+    image: '/public/Images/author-night.jpg',
     alt: 'An author reading to an audience',
     type: 'Readings',
   },
@@ -42,7 +42,7 @@ export const events = [
     title: 'Monthly Book Club',
     description:
       "Join fellow readers for coffee, discussion, and conversation around this month's featured novel.",
-    image: '/images/book-club.jpg',
+    image: '/public/Images/book-club.jpg',
     alt: 'Readers chatting over coffee',
     type: 'Community',
   },
@@ -52,7 +52,7 @@ export const events = [
     title: 'Poetry & Open Mic',
     description:
       'Share your work, discover local talent, and enjoy an evening of creativity.',
-    image: '/images/poetry-night.jpg',
+    image: '/public/Images/poetry-night.jpg',
     alt: 'A poet performing at an open mic',
     type: 'Readings',
   },
@@ -62,7 +62,7 @@ export const events = [
     title: 'Kids Story Time',
     description:
       'Bring the little ones for a morning of picture books, songs, and imaginative play.',
-    image: '/images/book-club.jpg',
+    image: '/public/Images/kids-story-time.jpg',
     alt: 'Children listening to a story',
     type: 'Family',
   },
