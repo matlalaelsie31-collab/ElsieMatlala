@@ -62,7 +62,7 @@ export const events = [
     title: 'Kids Story Time',
     description:
       'Bring the little ones for a morning of picture books, songs, and imaginative play.',
-    image: '/public/Images/kids-story-time.jpg',
+    image: '/public/images/kids-story-time.jpg',
     alt: 'Children listening to a story',
     type: 'Family',
   },
