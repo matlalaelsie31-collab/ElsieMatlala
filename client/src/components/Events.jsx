@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import { events, eventTypes } from '../data/items';
+import useApi from '../hooks/useApi';
 import EventCard from './EventCard';
 
 export default function Events() {
+  const { data: events, loading, error } = useApi('/api/events');
   const [filter, setFilter] = useState('All');
   const [savedIds, setSavedIds] = useState([]);
+
+  const eventTypes = ['All', ...new Set(events.map((e) => e.type))];
 
   const visibleEvents =
     filter === 'All' ? events : events.filter((e) => e.type === filter);
@@ -22,6 +25,13 @@ export default function Events() {
       <h2 className="mb-6 text-center text-3xl font-bold text-accent">
         Upcoming Events
       </h2>
+
+      {loading && <p className="text-center text-ink-light">Loading events…</p>}
+      {error && (
+        <p className="text-center font-semibold text-red-700">
+          Could not load events. Please try again later.
+        </p>
+      )}
 
       <div className="mb-8 flex flex-wrap justify-center gap-2">
         {eventTypes.map((type) => (

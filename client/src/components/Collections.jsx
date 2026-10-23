@@ -1,7 +1,9 @@
-import { collections } from '../data/items';
-import BookCard from './BookCard';
+import useApi from '../hooks/useApi';
+import BookCard from './Bookcard';
 
 export default function Collections() {
+  const { data: collections, loading, error } = useApi('/api/collections');
+
   return (
     <section
       id="books"
@@ -10,6 +12,14 @@ export default function Collections() {
       <h2 className="mb-8 text-center text-3xl font-bold text-accent">
         Featured Collections
       </h2>
+
+      {loading && <p className="text-center text-ink-light">Loading collections…</p>}
+      {error && (
+        <p className="text-center font-semibold text-red-700">
+          Could not load collections. Please try again later.
+        </p>
+      )}
+
       <div className="grid grid-cols-1 gap-8">
         {collections.map((c) => (
           <BookCard key={c.id} collection={c} />

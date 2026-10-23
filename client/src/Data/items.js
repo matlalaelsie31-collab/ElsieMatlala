@@ -4,7 +4,7 @@ export const collections = [
     title: 'Fiction',
     description:
       'Dive into bestselling novels, literary favourites, fantasy adventures, mysteries, and contemporary stories.',
-    image: '/public/Images/fiction.jpg',
+    image: '/client/public/images/fiction.jpg',
     alt: 'Shelves of fiction books',
   },
   {
@@ -12,7 +12,7 @@ export const collections = [
     title: 'Nonfiction',
     description:
       'Explore history, science, business, biographies, and inspiring real-life stories.',
-    image: '/public/Images/non-fiction.jpg',
+    image: 'public/images/non-fiction.jpg',
     alt: 'A stack of nonfiction books',
   },
   {
@@ -20,7 +20,7 @@ export const collections = [
     title: 'Staff Picks',
     description:
       'Discover hand-picked favourites selected by our passionate booksellers and reading community.',
-    image: '/public/Images/staff-picks.jpg',
+    image: '/public/images/staff-picks.jpg',
     alt: 'Staff recommended books on display',
   },
 ];
@@ -32,7 +32,7 @@ export const events = [
     title: 'Author Reading Night',
     description:
       'Meet local authors, enjoy live readings, and take part in audience Q&A sessions.',
-    image: '/public/Images/author-night.jpg',
+    image: 'public/Images/author-night.jpg',
     alt: 'An author reading to an audience',
     type: 'Readings',
   },
