@@ -7,21 +7,22 @@ export default function useApi(path) {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const controller = new AbortController();
+    let cancelled = false;
 
-    setLoading(true);
-    setError('');
-
-    fetchJson(path, { signal: controller.signal })
-      .then(setData)
+    fetchJson(path)
+      .then((result) => {
+        if (!cancelled) setData(result);
+      })
       .catch((err) => {
-        if (err.name !== 'AbortError') setError(err.message);
+        if (!cancelled) setError(err.message);
       })
       .finally(() => {
-        if (!controller.signal.aborted) setLoading(false);
+        if (!cancelled) setLoading(false);
       });
 
-    return () => controller.abort();
+    return () => {
+      cancelled = true;
+    };
   }, [path]);
 
   return { data, loading, error };
