@@ -1,16 +1,35 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
 import pool from './db.js';
+import { auth } from './auth.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  })
+);
+
+// Auth must come BEFORE express.json()
+app.all('/api/auth/*splat', toNodeHandler(auth));
+
 app.use(express.json());
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
+});
+
+app.get('/api/me', async (req, res) => {
+  const session = await auth.api.getSession({
+    headers: fromNodeHeaders(req.headers),
+  });
+  res.json(session);
 });
 
 app.get('/api/collections', async (req, res) => {
