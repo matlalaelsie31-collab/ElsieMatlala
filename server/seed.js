@@ -7,7 +7,7 @@ const collections = [
     title: 'Fiction',
     description:
       'Dive into bestselling novels, literary favourites, fantasy adventures, mysteries, and contemporary stories.',
-    image: '/client/public/images/fiction.jpg',
+    image: '/images/fiction.jpg',
     alt: 'Shelves of fiction books',
   },
   {
@@ -15,7 +15,7 @@ const collections = [
     title: 'Nonfiction',
     description:
       'Explore history, science, business, biographies, and inspiring real-life stories.',
-    image: '/client/public/images/non-fiction.jpg',
+    image: '/images/non-fiction.jpg',
     alt: 'A stack of nonfiction books',
   },
   {
@@ -45,7 +45,7 @@ const events = [
     title: 'Monthly Book Club',
     description:
       "Join fellow readers for coffee, discussion, and conversation around this month's featured novel.",
-    image: '/client/public/images/book-club.jpg',
+    image: 'images/book-club.jpg',
     alt: 'Readers chatting over coffee',
     type: 'Community',
   },
@@ -55,7 +55,7 @@ const events = [
     title: 'Poetry & Open Mic',
     description:
       'Share your work, discover local talent, and enjoy an evening of creativity.',
-    image: '/client/public/images/poetry-night.jpg',
+    image: '/images/poetry-night.jpg',
     alt: 'A poet performing at an open mic',
     type: 'Readings',
   },
@@ -65,11 +65,12 @@ const events = [
     title: 'Kids Story Time',
     description:
       'Bring the little ones for a morning of picture books, songs, and imaginative play.',
-    image: '/client/public/images/kids-story-time.jpg',
+    image: '/images/kids-story-time.jpg',
     alt: 'Children listening to a story',
     type: 'Family',
   },
 ];
+
 
 async function seed() {
   const schema = fs.readFileSync(new URL('./schema.sql', import.meta.url), 'utf8');
