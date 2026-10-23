@@ -4,7 +4,7 @@ export const collections = [
     title: 'Fiction',
     description:
       'Dive into bestselling novels, literary favourites, fantasy adventures, mysteries, and contemporary stories.',
-    image: '/client/public/images/fiction.jpg',
+    image: 'public/images/fiction.jpg',
     alt: 'Shelves of fiction books',
   },
   {
@@ -20,7 +20,7 @@ export const collections = [
     title: 'Staff Picks',
     description:
       'Discover hand-picked favourites selected by our passionate booksellers and reading community.',
-    image: '/public/images/staff-picks.jpg',
+    image: 'public/images/staff-picks.jpg',
     alt: 'Staff recommended books on display',
   },
 ];
@@ -42,7 +42,7 @@ export const events = [
     title: 'Monthly Book Club',
     description:
       "Join fellow readers for coffee, discussion, and conversation around this month's featured novel.",
-    image: '/public/Images/book-club.jpg',
+    image: 'public/Images/book-club.jpg',
     alt: 'Readers chatting over coffee',
     type: 'Community',
   },
@@ -62,7 +62,7 @@ export const events = [
     title: 'Kids Story Time',
     description:
       'Bring the little ones for a morning of picture books, songs, and imaginative play.',
-    image: '/public/images/kids-story-time.jpg',
+    image: 'public/images/kids-story-time.jpg',
     alt: 'Children listening to a story',
     type: 'Family',
   },
