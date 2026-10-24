@@ -1,16 +1,18 @@
-# React + Vite
+## Live site
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+- App: https://YOUR-SHORT-ADDRESS.vercel.app
+- API: https://elsiematlala.onrender.com/api/events
 
-Currently, two official plugins are available:
+The API runs on Render's free tier, so the first request after a quiet spell can take about a minute.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Structure
 
-## React Compiler
+- `client/`: React + Tailwind + Vite frontend
+- `server/`: Express API, Postgres (Neon), Better Auth
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run it locally
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+1. Copy `server/.env.example` to `server/.env` and fill it in (database URL, auth secret).
+2. Copy `client/.env.example` to `client/.env`.
+3. In `server`: `npm install`, then `npm run seed`, then `npm run dev`.
+4. In `client`: `npm install`, then `npm run dev`.
