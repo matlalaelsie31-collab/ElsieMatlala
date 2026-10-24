@@ -1,5 +1,5 @@
 import useApi from '../hooks/useApi';
-import BookCard from './Bookcard';
+import BookCard from "./BookCard";
 
 export default function Collections() {
   const { data: collections, loading, error } = useApi('/api/collections');
