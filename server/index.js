@@ -6,6 +6,7 @@ import pool from './db.js';
 import { auth } from './auth.js';
 import requireAuth from './middleware/requireAuth.js';
 import checkoutRouter from './routes/checkout.js';
+import stripeWebhook from './routes/webhook.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +21,8 @@ app.use(
 
 // Auth must come BEFORE express.json()
 app.all('/api/auth/*splat', toNodeHandler(auth));
+
+app.post('/api/webhook', express.raw({ type: 'application/json' }), stripeWebhook);
 
 app.use(express.json());
 
