@@ -5,6 +5,7 @@ import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
 import pool from './db.js';
 import { auth } from './auth.js';
 import requireAuth from './middleware/requireAuth.js';
+import checkoutRouter from './routes/checkout.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,13 +23,12 @@ app.all('/api/auth/*splat', toNodeHandler(auth));
 
 app.use(express.json());
 
+app.use('/api/checkout', checkoutRouter);
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-app.get('/api/protected-test', requireAuth, (req, res) => {
-  res.json({ ok: true, userId: req.user.id, email: req.user.email });
-});
 
 app.get('/api/me', async (req, res) => {
   const session = await auth.api.getSession({
