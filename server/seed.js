@@ -94,7 +94,7 @@ async function seed() {
       [e.id, e.date, e.title, e.description, e.image, e.alt, e.type, i]
     );
   }
-
+await pool.query('UPDATE events SET price_cents = 1500 WHERE price_cents = 0');
   console.log('Seeded:', collections.length, 'collections,', events.length, 'events');
   await pool.end();
 }

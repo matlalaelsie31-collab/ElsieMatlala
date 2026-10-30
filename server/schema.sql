@@ -1,19 +1,21 @@
-CREATE TABLE IF NOT EXISTS collections (
-  id          TEXT PRIMARY KEY,
-  title       TEXT NOT NULL,
-  description TEXT NOT NULL,
-  image       TEXT NOT NULL,
-  alt         TEXT NOT NULL,
-  sort_order  INTEGER NOT NULL DEFAULT 0
+ALTER TABLE events ADD COLUMN IF NOT EXISTS price_cents INTEGER NOT NULL DEFAULT 0;
+
+CREATE TABLE IF NOT EXISTS orders (
+  id SERIAL PRIMARY KEY,
+  user_id TEXT NOT NULL REFERENCES "user"(id),
+  status TEXT NOT NULL DEFAULT 'pending',
+  total_cents INTEGER NOT NULL,
+  currency TEXT NOT NULL DEFAULT 'usd',
+  stripe_session_id TEXT UNIQUE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  paid_at TIMESTAMPTZ
 );
 
-CREATE TABLE IF NOT EXISTS events (
-  id          TEXT PRIMARY KEY,
-  date        TEXT NOT NULL,
-  title       TEXT NOT NULL,
-  description TEXT NOT NULL,
-  image       TEXT NOT NULL,
-  alt         TEXT NOT NULL,
-  type        TEXT NOT NULL,
-  sort_order  INTEGER NOT NULL DEFAULT 0
+CREATE TABLE IF NOT EXISTS order_items (
+  id SERIAL PRIMARY KEY,
+  order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
+  event_id TEXT NOT NULL,
+  title TEXT NOT NULL,
+  unit_price_cents INTEGER NOT NULL,
+  quantity INTEGER NOT NULL DEFAULT 1
 );
